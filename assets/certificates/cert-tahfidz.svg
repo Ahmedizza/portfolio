@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090c" />
+      <stop offset="50%" stop-color="#11151a" />
+      <stop offset="100%" stop-color="#050608" />
+    </linearGradient>
+    <linearGradient id="silverGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="40%" stop-color="#f8fafc" />
+      <stop offset="70%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+    <linearGradient id="borderEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#24282d" />
+      <stop offset="50%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#24282d" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="560" fill="url(#bgGrad2)" rx="16" />
+
+  <!-- Outer Borders -->
+  <rect x="24" y="24" width="752" height="512" fill="none" stroke="url(#borderEdge)" stroke-width="2" rx="10" />
+  <rect x="36" y="36" width="728" height="488" fill="none" stroke="rgba(226, 232, 240, 0.15)" stroke-width="1" stroke-dasharray="6 3" rx="8" />
+
+  <!-- Geometry Lines -->
+  <circle cx="400" cy="280" r="220" fill="none" stroke="rgba(148, 163, 184, 0.03)" stroke-width="1" />
+  <circle cx="400" cy="280" r="160" fill="none" stroke="rgba(148, 163, 184, 0.04)" stroke-width="1" />
+
+  <!-- Institution Header -->
+  <g transform="translate(400, 95)">
+    <circle cx="0" cy="0" r="34" fill="#15191f" stroke="url(#silverGlow)" stroke-width="1.5" />
+    <!-- Islamic Star Motif -->
+    <polygon points="0,-18 5,-5 18,-5 8,4 12,17 0,9 -12,17 -8,4 -18,-5 -5,-5" fill="none" stroke="url(#silverGlow)" stroke-width="1.2" />
+  </g>
+
+  <text x="400" y="152" font-family="'Orbitron', sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#a7adb4" text-anchor="middle">ISLAMIC DEVELOPMENT NETWORK</text>
+  <text x="400" y="172" font-family="'Inter', sans-serif" font-size="11" fill="#64748b" letter-spacing="1.5" text-anchor="middle">DIVISI PENDIDIKAN TAHFIDZ &amp; PENGELOLAAN ASRAMA</text>
+
+  <!-- Title -->
+  <text x="400" y="222" font-family="'Orbitron', sans-serif" font-size="22" font-weight="800" letter-spacing="3" fill="url(#silverGlow)" text-anchor="middle">SERTIFIKAT PENGABDIAN</text>
+  <text x="400" y="246" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8" letter-spacing="1" text-anchor="middle">Diberikan sebagai bentuk apresiasi dedikasi kepada:</text>
+
+  <!-- Recipient -->
+  <text x="400" y="295" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700" fill="#f8fafc" letter-spacing="1.5" text-anchor="middle">MOH IZZA ROMADLON</text>
+  <line x1="260" y1="312" x2="540" y2="312" stroke="url(#silverGlow)" stroke-width="1.2" opacity="0.6" />
+
+  <!-- Details -->
+  <text x="400" y="345" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#c7ccd1" text-anchor="middle">Bidang Tahfidz Al-Qur'an &amp; Pembinaan Kedisiplinan Asrama</text>
+  <text x="400" y="372" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Atas kontribusi aktif dan integritas dalam membimbing para santri,</text>
+  <text x="400" y="392" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">mengelola ketertiban asrama, serta menanamkan adab islami dan keteladanan kepemimpinan.</text>
+
+  <!-- Footer Info -->
+  <g transform="translate(140, 465)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">MASA TUGAS</text>
+    <text x="0" y="18" font-family="'Orbitron', sans-serif" font-size="13" font-weight="700" fill="#e5e7eb">1 TAHUN (2023 - 2024)</text>
+  </g>
+
+  <g transform="translate(400, 465)" text-anchor="middle">
+    <circle cx="0" cy="5" r="22" fill="#13171d" stroke="url(#silverGlow)" stroke-width="1" />
+    <text x="0" y="8" font-family="'Orbitron', sans-serif" font-size="9" fill="#c7ccd1" font-weight="700">HONOR</text>
+    <text x="0" y="34" font-family="'Inter', sans-serif" font-size="9" fill="#64748b">CERT-IDN-TAHFIDZ-04</text>
+  </g>
+
+  <g transform="translate(660, 465)" text-anchor="end">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">LEMBAGA MITRA</text>
+    <text x="0" y="18" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#e5e7eb">Ma'had Tahfidz Ibn Abbas</text>
+  </g>
+</svg>

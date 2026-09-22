@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Moh Izza Romadlon | Management Education Student & Web Development Enthusiast</title>
+  <meta name="description" content="Portfolio resmi Moh Izza Romadlon, mahasiswa Manajemen Pendidikan Islam di UIN Syekh Wasil Kediri yang mengembangkan diri dalam dunia pendidikan, kepemimpinan, dan teknologi web development." />
+  <meta name="keywords" content="Moh Izza Romadlon, UIN Syekh Wasil Kediri, Manajemen Pendidikan Islam, MPI, Web Development, Portfolio, Dark Silver, Futuristic" />
+  <meta name="author" content="Moh Izza Romadlon" />
+
+  <!-- Google Fonts: Orbitron, Space Grotesk, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            deepBlack: '#050505',
+            carbonBlack: '#0B0D0F',
+            darkGray: '#15181C',
+            graphite: '#24282D',
+            graphiteLight: '#32373F',
+            silverMuted: '#717A85',
+            silver: '#A7ADB4',
+            silverMetallic: '#C7CCD1',
+            silverBright: '#E5E7EB',
+            pureWhite: '#F8FAFC',
+            coldBlue: '#64748B',
+            iceBlue: '#94A3B8',
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            space: ['Space Grotesk', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Design Tokens & Futuristic Animations -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-[#050505] text-[#E5E7EB] font-inter antialiased selection:bg-[#24282D] selection:text-white">
+
+  <!-- ========================================================================
+       BACKGROUND: COSMIC CANVAS & FUTURISTIC GRID OVERLAY
+       ======================================================================== -->
+  <canvas id="cosmic-canvas" aria-hidden="true"></canvas>
+  <div class="cosmic-grid-overlay" aria-hidden="true"></div>
+
+  <div class="page-wrapper relative z-10 flex flex-col min-h-screen">
+
+    <!-- ========================================================================
+         1. NAVBAR
+         ======================================================================== -->
+    <header class="navbar" id="site-navbar">
+      <div class="max-w-[1320px] mx-auto px-5 md:px-8 h-full flex items-center justify-between">
+        
+        <!-- Logo with Dragon/Cosmic Emblem -->
+        <a href="#home" class="flex items-center gap-3 group" aria-label="Moh Izza Romadlon Homepage">
+          <div class="w-9 h-9 rounded-full bg-graphite/60 border border-silverMetallic/30 flex items-center justify-center p-1 shadow-[0_0_10px_rgba(199,204,209,0.2)] group-hover:border-silverBright group-hover:shadow-[0_0_15px_rgba(229,231,235,0.4)] transition-all">
+            <img src="assets/images/emblem.svg" alt="Cosmic Emblem" class="w-full h-full object-contain" />
+          </div>
+          <span class="font-orbitron font-extrabold text-lg tracking-wider text-pureWhite flex items-center">
+            IZZA<span class="text-silver">.</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Main Navigation">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#certificates" class="nav-link">Certificates</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#journey" class="nav-link">Journey</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- CTA & Mobile Menu Toggle -->
+        <div class="flex items-center gap-4">
+          <!-- WhatsApp Hire Me CTA -->
+          <a href="https://wa.me/6282132068499?text=Halo%20Moh%20Izza%20Romadlon,%20saya%20tertarik%20untuk%20berdiskusi%20dan%20berkolaborasi%20mengenai%20project" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-metallic hidden sm:inline-flex text-xs tracking-wider">
+            <span>Hire Me</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-menu-toggle" 
+                  class="lg:hidden p-2.5 rounded-lg bg-graphite/40 border border-silverMetallic/20 text-silver hover:text-pureWhite hover:border-silverBright transition-colors"
+                  aria-label="Toggle Mobile Menu"
+                  aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Drawer -->
+      <div id="mobile-nav-menu" class="hidden lg:hidden bg-carbonBlack/95 backdrop-blur-xl border-b border-silverMetallic/20 px-6 py-6 transition-all duration-300">
+        <nav class="flex flex-col gap-4 font-space text-sm" aria-label="Mobile Navigation">
+          <a href="#home" class="mobile-nav-link text-silver hover:text-pureWhite py-1">Home</a>
+          <a href="#about" class="mobile-nav-link text-silver hover:text-pureWhite py-1">About</a>
+          <a href="#education" class="mobile-nav-link text-silver hover:text-pureWhite py-1">Education</a>
+          <a href="#skills" class="mobile-nav-link text-silver hover:text-pureWhite py-1">Skills</a>
+          <a href="#certificates" class="mobile-nav-link text-silver hover:text-pureWhite py-1">Certificates</a>
+          <a href="#projects" class="mobile-nav-link text-silver hover:text-pureWhite py-1">Projects</a>
+          <a href="#journey" class="mobile-nav-link text-silver hover:text-pureWhite py-1">Journey</a>
+          <a href="#contact" class="mobile-nav-link text-silver hover:text-pureWhite py-1">Contact</a>
+          <a href="https://wa.me/6282132068499?text=Halo%20Moh%20Izza%20Romadlon,%20saya%20tertarik%20untuk%20berkolaborasi" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-metallic mt-2 w-full text-center">
+            <span>Hire Me via WhatsApp</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ========================================================================
+         2. HERO SECTION
+         ======================================================================== -->
+    <main class="flex-grow">
+      <section id="home" class="pt-32 md:pt-40 pb-20 md:pb-28 relative">
+        <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Column: Hero Text & Information -->
+            <div class="lg:col-span-7 flex flex-col items-start reveal">
+              
+              <!-- Semester & University Badge -->
+              <div class="hero-badge mb-6">
+                <span class="pulse-dot"></span>
+                <span>SEMESTER 5 • UIN SYEKH WASIL KEDIRI</span>
+              </div>
+
+              <!-- Salutation & Name -->
+              <div class="mb-4">
+                <span class="font-space text-sm md:text-base font-semibold tracking-widest text-silver uppercase block mb-1">
+                  Hi, I'm
+                </span>
+                <h1 class="font-orbitron font-black text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-tight tracking-tight uppercase">
+                  <span class="text-pureWhite block">MOH IZZA</span>
+                  <span class="text-metallic block">ROMADLON</span>
+                </h1>
+              </div>
+
+              <!-- Subtitle -->
+              <p class="font-space text-base sm:text-lg md:text-xl font-medium text-silverMetallic mb-6 tracking-wide">
+                Management Education Student <span class="text-iceBlue">×</span> Web Development Enthusiast
+              </p>
+
+              <!-- Description -->
+              <p class="font-inter text-silverMuted text-base md:text-lg leading-relaxed max-w-[620px] mb-8">
+                Saya adalah mahasiswa Manajemen Pendidikan Islam yang terus mengembangkan diri dalam bidang pendidikan, teknologi, dan web development. Berkomitmen menjembatani kepemimpinan edukatif dengan inovasi digital modern.
+              </p>
+
+              <!-- Action Buttons -->
+              <div class="flex flex-wrap items-center gap-4 mb-10 w-full sm:w-auto">
+                <a href="#contact" class="btn-metallic w-full sm:w-auto">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span>Download CV</span>
+                </a>
+                <a href="#journey" class="btn-outline w-full sm:w-auto">
+                  <span>Explore My Journey</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Social Links -->
+              <div class="flex items-center gap-4 pt-4 border-t border-silverMetallic/15 w-full">
+                <span class="font-space text-xs tracking-wider text-silverMuted uppercase">Connect:</span>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/za_rama.02?stkn=b2FmMjhubjk4amVm" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   aria-label="Instagram Moh Izza Romadlon" 
+                   class="w-10 h-10 rounded-full bg-graphite/60 border border-silverMetallic/20 flex items-center justify-center text-silver hover:text-pureWhite hover:border-silverBright hover:scale-105 transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5.25-3.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/>
+                  </svg>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   aria-label="GitHub Moh Izza Romadlon" 
+                   class="w-10 h-10 rounded-full bg-graphite/60 border border-silverMetallic/20 flex items-center justify-center text-silver hover:text-pureWhite hover:border-silverBright hover:scale-105 transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6282132068499" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   aria-label="WhatsApp Moh Izza Romadlon" 
+                   class="w-10 h-10 rounded-full bg-graphite/60 border border-silverMetallic/20 flex items-center justify-center text-silver hover:text-pureWhite hover:border-silverBright hover:scale-105 transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M20.5 3.5A11.6 11.6 0 0 0 3.8 17.7L2.2 21.8l4.3-1.6a11.7 11.7 0 0 0 13.9-18.7zm-7.1 17.6h-.1a9.7 9.7 0 0 1-4.9-1.3l-.3-.2-2.5.9.8-2.4-.2-.3A9.8 9.8 0 1 1 13.4 21.1zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5c-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.1.1-.3.1-.4 0-.1-.1-.3-.2-.5-.1-.2-.7-1.6-.9-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.3-.3.3-1 1-.1 2.5s1.8 3.1 4 4.2c2.2 1.2 2.7 1.1 3.2.9.5-.2 1.6-.7 1.8-1.3.2-.7.2-1.2.1-1.3-.1-.1-.3-.2-.6-.3z"/>
+                  </svg>
+                </a>
+
+                <!-- X (Twitter) -->
+                <a href="https://x.com/AhmedizzaR" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   aria-label="X Profile Moh Izza Romadlon" 
+                   class="w-10 h-10 rounded-full bg-graphite/60 border border-silverMetallic/20 flex items-center justify-center text-silver hover:text-pureWhite hover:border-silverBright hover:scale-105 transition-all">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M18.9 2h3.2l-7 8L22.9 22h-6.3l-4.9-7.2L6.7 22H3.5l7.5-8.6L1.1 2h6.5l4.4 6.5L18.9 2zm-1.1 18h1.8L7.2 3.9H5.3L17.8 20z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Futuristic Hero Visual & Profile Mode Switcher -->
+            <div class="lg:col-span-5 flex justify-center reveal delay-200">
+              <div class="avatar-hud-wrapper">
+                
+                <!-- Rotating HUD Outer Ring -->
+                <div class="ring-outer" aria-hidden="true"></div>
+                <div class="ring-inner" aria-hidden="true"></div>
+
+                <!-- Avatar Frame Box -->
+                <div class="avatar-display-box hud-corner">
+                  
+                  <!-- HUD Top Badge: Status / Evolution -->
+                  <div class="avatar-badge-top">
+                    <span id="avatar-status-desc" class="tracking-wider">EVOLUTION IN PROGRESS</span>
+                  </div>
+
+                  <!-- HUD Bottom Badge: Level 05 -->
+                  <div class="avatar-badge-bottom">
+                    <span>LEVEL 05</span>
+                  </div>
+
+                  <!-- Real World Authentic Photo -->
+                  <img id="avatar-real" 
+                       src="assets/images/profile.jpg" 
+                       alt="Moh Izza Romadlon Formal Portrait" 
+                       class="avatar-image active" />
+
+                  <!-- Cosmic Warrior Avatar (Swallowed Star Aesthetic) -->
+                  <img id="avatar-cosmic" 
+                       src="assets/images/cosmic-avatar.jpg" 
+                       alt="Cosmic Warrior Holographic Avatar" 
+                       class="avatar-image inactive" />
+                </div>
+
+                <!-- Floating Interactive Profile Mode Toggle Button -->
+                <button id="profile-mode-toggle" 
+                        class="mode-toggle-btn group" 
+                        aria-label="Toggle profile mode between Real World and Cosmic Mode">
+                  <svg class="w-3.5 h-3.5 text-silverBright" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span>PROFILE MODE: <span id="mode-badge-text" class="text-silverBright underline">REAL WORLD</span></span>
+                </button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           3. HORIZONTAL RUNNING MARQUEE
+           ======================================================================== -->
+      <section class="marquee-container" aria-label="Core Technology Highlights">
+        <div class="marquee-track">
+          <!-- First Set -->
+          <div class="marquee-item">HTML5 <span class="star">✦</span></div>
+          <div class="marquee-item">CSS3 <span class="star">✦</span></div>
+          <div class="marquee-item">TAILWIND CSS <span class="star">✦</span></div>
+          <div class="marquee-item">JAVASCRIPT <span class="star">✦</span></div>
+          <div class="marquee-item">GIT <span class="star">✦</span></div>
+          <div class="marquee-item">GITHUB <span class="star">✦</span></div>
+          <div class="marquee-item">RESPONSIVE WEB <span class="star">✦</span></div>
+          <div class="marquee-item">WEB DEVELOPMENT <span class="star">✦</span></div>
+          
+          <!-- Duplicate Set for Seamless Loop -->
+          <div class="marquee-item">HTML5 <span class="star">✦</span></div>
+          <div class="marquee-item">CSS3 <span class="star">✦</span></div>
+          <div class="marquee-item">TAILWIND CSS <span class="star">✦</span></div>
+          <div class="marquee-item">JAVASCRIPT <span class="star">✦</span></div>
+          <div class="marquee-item">GIT <span class="star">✦</span></div>
+          <div class="marquee-item">GITHUB <span class="star">✦</span></div>
+          <div class="marquee-item">RESPONSIVE WEB <span class="star">✦</span></div>
+          <div class="marquee-item">WEB DEVELOPMENT <span class="star">✦</span></div>
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           4. ABOUT ME SECTION & STATISTICS
+           ======================================================================== -->
+      <section id="about" class="py-24 relative">
+        <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+          
+          <!-- Section Title -->
+          <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+            <span class="font-orbitron text-xs tracking-widest text-silver uppercase block mb-2">PROFIL PRIBADI</span>
+            <h2 class="font-orbitron font-extrabold text-3xl sm:text-4xl md:text-5xl text-pureWhite mb-4">
+              ABOUT <span class="text-metallic">ME</span>
+            </h2>
+            <p class="font-space text-silverMetallic text-base sm:text-lg">
+              Building Knowledge. Developing Skills. Creating Value.
+            </p>
+          </div>
+
+          <!-- About Narrative & Content Card -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
+            
+            <!-- Left Large Glass Card -->
+            <div class="lg:col-span-8 glass-panel p-8 sm:p-10 hud-corner flex flex-col justify-between reveal">
+              <div>
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-3 h-3 rounded-full bg-silverBright"></div>
+                  <span class="font-orbitron text-xs tracking-widest text-silver uppercase">SINTESIS NILAI & ILMU</span>
+                </div>
+                
+                <div class="space-y-4 font-inter text-silverMuted text-base sm:text-lg leading-relaxed">
+                  <p>
+                    Saya adalah <strong class="text-pureWhite font-semibold">Moh Izza Romadlon</strong>, mahasiswa semester 5 Program Studi Manajemen Pendidikan Islam di UIN Syekh Wasil Kediri.
+                  </p>
+                  <p>
+                    Saya memiliki ketertarikan mendalam pada manajemen pendidikan, kepemimpinan Islam, pengembangan karakter santri, dan transformasi digital. Bagi saya, perkuliahan bukan sekadar pencapaian akademis formal, melainkan laboratorium pembentukan pemikiran analitis, etika, dan kesiapan berkontribusi.
+                  </p>
+                  <p>
+                    Saat ini saya sedang memperdalam <span class="text-silverBright">HTML, CSS, Tailwind CSS, JavaScript, Git, dan GitHub</span>. Saya percaya bahwa kemampuan mengintegrasikan sistem tata kelola pendidikan dengan teknologi web interaktif adalah kunci kemajuan institusi pendidikan di era modern.
+                  </p>
+                </div>
+              </div>
+
+              <div class="pt-6 mt-6 border-t border-silverMetallic/15 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                  <span class="font-orbitron text-xs text-silver tracking-wider">STATUS:</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-graphite/70 border border-silverMetallic/25 text-pureWhite">
+                    Aktif Kuliah & Belajar Web Dev
+                  </span>
+                </div>
+                <div class="text-xs font-space text-silverMuted">
+                  Lokasi: Kediri, Jawa Timur
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Visual Quote & Focus Box -->
+            <div class="lg:col-span-4 glass-panel p-8 flex flex-col justify-between reveal delay-200">
+              <div>
+                <div class="w-10 h-10 rounded-xl bg-graphite/80 border border-silverMetallic/30 flex items-center justify-center text-silverBright mb-6">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 class="font-orbitron font-bold text-xl text-pureWhite mb-3">Fokus Pengembangan</h3>
+                <ul class="space-y-3 font-space text-sm text-silver">
+                  <li class="flex items-start gap-2">
+                    <span class="text-silverBright">✦</span>
+                    <span>Tata kelola & administrasi lembaga pendidikan Islam</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-silverBright">✦</span>
+                    <span>Pendidikan bahasa Arab & pembinaan tahfidz Al-Qur'an</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-silverBright">✦</span>
+                    <span>Frontend semantic layout & responsive web architecture</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="p-4 rounded-xl bg-graphite/40 border border-silverMetallic/15 mt-6">
+                <p class="font-space text-xs text-silverMuted italic">
+                  "Menyatukan nilai adab islamiyah dengan ketelitian kode pemrograman digital."
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 4 Statistics Cards -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 reveal">
+            
+            <!-- Stat 1 -->
+            <div class="stat-card">
+              <div class="stat-number">01</div>
+              <div class="font-space text-xs sm:text-sm font-semibold tracking-wider text-pureWhite uppercase">Education</div>
+              <div class="font-inter text-xs text-silverMuted mt-1">S1 Manajemen Pend. Islam</div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="stat-card">
+              <div class="stat-number">05</div>
+              <div class="font-space text-xs sm:text-sm font-semibold tracking-wider text-pureWhite uppercase">Semester</div>
+              <div class="font-inter text-xs text-silverMuted mt-1">UIN Syekh Wasil Kediri</div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="stat-card">
+              <div class="stat-number">10+</div>
+              <div class="font-space text-xs sm:text-sm font-semibold tracking-wider text-pureWhite uppercase">Projects / Exp</div>
+              <div class="font-inter text-xs text-silverMuted mt-1">Web, Riset & Edukasi</div>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="stat-card">
+              <div class="stat-number">100%</div>
+              <div class="font-space text-xs sm:text-sm font-semibold tracking-wider text-pureWhite uppercase">Dedication</div>
+              <div class="font-inter text-xs text-silverMuted mt-1">Komitmen Perkembangan</div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           5. EDUCATION JOURNEY (FUTURISTIC GLOWING TIMELINE)
+           ======================================================================== -->
+      <section id="education" class="py-24 bg-carbonBlack/60 relative border-t border-b border-silverMetallic/10">
+        <div class="max-w-[1080px] mx-auto px-5 md:px-8">
+          
+          <!-- Section Header -->
+          <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+            <span class="font-orbitron text-xs tracking-widest text-silver uppercase block mb-2">JEJAK AKADEMIK</span>
+            <h2 class="font-orbitron font-extrabold text-3xl sm:text-4xl md:text-5xl text-pureWhite mb-4">
+              EDUCATION <span class="text-metallic">JOURNEY</span>
+            </h2>
+            <p class="font-space text-silverMetallic text-base sm:text-lg">
+              Every stage builds the next version of me.
+            </p>
+          </div>
+
+          <!-- Vertical Timeline Container -->
+          <div class="relative pl-6 md:pl-10">
+            <!-- Glowing Silver Stem Line -->
+            <div class="timeline-stem" aria-hidden="true"></div>
+
+            <!-- Timeline Node 1: UIN Syekh Wasil Kediri -->
+            <div class="timeline-node reveal">
+              <div class="timeline-energy-node"></div>
+              <div class="glass-panel p-6 sm:p-8 flex-1 hud-corner">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <span class="font-orbitron text-xs tracking-wider px-3 py-1 rounded bg-graphite border border-silverMetallic/30 text-pureWhite font-bold">
+                    2024 — PRESENT
+                  </span>
+                  <span class="font-space text-xs text-iceBlue">Perguruan Tinggi Negeri</span>
+                </div>
+                <h3 class="font-orbitron font-bold text-xl sm:text-2xl text-pureWhite mb-1">
+                  UIN Syekh Wasil Kediri
+                </h3>
+                <p class="font-space text-silverMetallic text-sm sm:text-base font-semibold mb-3">
+                  Program Studi Manajemen Pendidikan Islam (MPI) • Mahasiswa Semester 5
+                </p>
+                <p class="font-inter text-silverMuted text-sm leading-relaxed">
+                  Menempuh pendidikan sarjana dengan fokus pada kepemimpinan pendidikan, tata kelola lembaga Islam, perencanaan strategis pendidikan, serta pengembangan kurikulum dan kebijakan mutu.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Node 2: LIPIA Surabaya -->
+            <div class="timeline-node reveal delay-100">
+              <div class="timeline-energy-node"></div>
+              <div class="glass-panel p-6 sm:p-8 flex-1 hud-corner">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <span class="font-orbitron text-xs tracking-wider px-3 py-1 rounded bg-graphite border border-silverMetallic/30 text-pureWhite font-bold">
+                    2023
+                  </span>
+                  <span class="font-space text-xs text-iceBlue">Pendidikan Intensif</span>
+                </div>
+                <h3 class="font-orbitron font-bold text-xl sm:text-2xl text-pureWhite mb-1">
+                  LIPIA Surabaya
+                </h3>
+                <p class="font-space text-silverMetallic text-sm sm:text-base font-semibold mb-3">
+                  Pendidikan Bahasa Arab dan Studi Keislaman
+                </p>
+                <p class="font-inter text-silverMuted text-sm leading-relaxed">
+                  Mendalami kaidah tata bahasa Arab formal (Nahwu, Sharaf), kefasihan literatur klasik, pemahaman teks syar'i, dan wawasan metodologi studi keislaman.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Node 3: SMA Abdullah bin Abbas As-Salafi -->
+            <div class="timeline-node reveal delay-200">
+              <div class="timeline-energy-node"></div>
+              <div class="glass-panel p-6 sm:p-8 flex-1 hud-corner">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <span class="font-orbitron text-xs tracking-wider px-3 py-1 rounded bg-graphite border border-silverMetallic/30 text-pureWhite font-bold">
+                    2019 — 2021
+                  </span>
+                  <span class="font-space text-xs text-iceBlue">Pendidikan Menengah Atas</span>
+                </div>
+                <h3 class="font-orbitron font-bold text-xl sm:text-2xl text-pureWhite mb-1">
+                  SMA Abdullah bin Abbas As-Salafi
+                </h3>
+                <p class="font-space text-silverMetallic text-sm sm:text-base font-semibold mb-3">
+                  Sragen, Jawa Tengah
+                </p>
+                <p class="font-inter text-silverMuted text-sm leading-relaxed">
+                  Menempuh pendidikan tingkat atas berbasis asrama pesantren dengan penekanan pada pendalaman adab, tahfidz Al-Qur'an, kedisiplinan hidup mandiri, dan kepemimpinan santri.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Node 4: SMP Abdullah bin Abbas As-Salafi -->
+            <div class="timeline-node reveal delay-300">
+              <div class="timeline-energy-node"></div>
+              <div class="glass-panel p-6 sm:p-8 flex-1 hud-corner">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <span class="font-orbitron text-xs tracking-wider px-3 py-1 rounded bg-graphite border border-silverMetallic/30 text-pureWhite font-bold">
+                    2015 — 2018
+                  </span>
+                  <span class="font-space text-xs text-iceBlue">Pendidikan Menengah Pertama</span>
+                </div>
+                <h3 class="font-orbitron font-bold text-xl sm:text-2xl text-pureWhite mb-1">
+                  SMP Abdullah bin Abbas As-Salafi
+                </h3>
+                <p class="font-space text-silverMetallic text-sm sm:text-base font-semibold mb-3">
+                  Sragen, Jawa Tengah
+                </p>
+                <p class="font-inter text-silverMuted text-sm leading-relaxed">
+                  Membangun pondasi keilmuan agama, hafalan Al-Qur'an, pembiasaan bahasa Arab harian, dan pembentukan integritas karakter di lingkungan santri.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Node 5: SD Sabilul Mukminin -->
+            <div class="timeline-node reveal delay-400">
+              <div class="timeline-energy-node"></div>
+              <div class="glass-panel p-6 sm:p-8 flex-1 hud-corner">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <span class="font-orbitron text-xs tracking-wider px-3 py-1 rounded bg-graphite border border-silverMetallic/30 text-pureWhite font-bold">
+                    2009 — 2014
+                  </span>
+                  <span class="font-space text-xs text-iceBlue">Pendidikan Dasar</span>
+                </div>
+                <h3 class="font-orbitron font-bold text-xl sm:text-2xl text-pureWhite mb-1">
+                  SD Sabilul Mukminin
+                </h3>
+                <p class="font-space text-silverMetallic text-sm sm:text-base font-semibold mb-3">
+                  Kediri, Jawa Timur
+                </p>
+                <p class="font-inter text-silverMuted text-sm leading-relaxed">
+                  Mengawali fondasi belajar formal dan pembentukan kepribadian religius sejak usia dini di kota kelahiran Kediri.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           6. SKILLS & TECHNOLOGY
+           ======================================================================== -->
+      <section id="skills" class="py-24 relative">
+        <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+          
+          <!-- Section Header -->
+          <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+            <span class="font-orbitron text-xs tracking-widest text-silver uppercase block mb-2">KOMPETENSI & TOOLS</span>
+            <h2 class="font-orbitron font-extrabold text-3xl sm:text-4xl md:text-5xl text-pureWhite mb-4">
+              SKILLS & <span class="text-metallic">TECHNOLOGY</span>
+            </h2>
+            <p class="font-space text-silverMetallic text-base sm:text-lg">
+              Keahlian praktis yang sedang aktif dipelajari, dieksplorasi, dan dikembangkan.
+            </p>
+          </div>
+
+          <!-- Skills Cards Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Skill 1: HTML5 -->
+            <div class="skill-card reveal">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl bg-graphite/80 border border-silverMetallic/25 flex items-center justify-center text-pureWhite">
+                  <span class="font-orbitron font-black text-sm">H5</span>
+                </div>
+                <span class="skill-badge developing">Developing</span>
+              </div>
+              <h3 class="font-orbitron font-bold text-lg text-pureWhite mb-1">HTML5</h3>
+              <p class="font-inter text-xs text-silverMuted leading-relaxed">
+                Semantic markup, web accessibility standard, clean structure, metadata, and modern forms.
+              </p>
+            </div>
+
+            <!-- Skill 2: CSS3 -->
+            <div class="skill-card reveal delay-100">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl bg-graphite/80 border border-silverMetallic/25 flex items-center justify-center text-pureWhite">
+                  <span class="font-orbitron font-black text-sm">C3</span>
+                </div>
+                <span class="skill-badge developing">Developing</span>
+              </div>
+              <h3 class="font-orbitron font-bold text-lg text-pureWhite mb-1">CSS3</h3>
+              <p class="font-inter text-xs text-silverMuted leading-relaxed">
+                Flexbox, Grid layouting, keyframe animations, CSS custom properties, and responsive media queries.
+              </p>
+            </div>
+
+            <!-- Skill 3: Tailwind CSS -->
+            <div class="skill-card reveal delay-200">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl bg-graphite/80 border border-silverMetallic/25 flex items-center justify-center text-pureWhite">
+                  <span class="font-orbitron font-black text-sm">TW</span>
+                </div>
+                <span class="skill-badge exploring">Exploring</span>
+              </div>
+              <h3 class="font-orbitron font-bold text-lg text-pureWhite mb-1">Tailwind CSS</h3>
+              <p class="font-inter text-xs text-silverMuted leading-relaxed">
+                Utility-first design system, responsive breakpoints, dark mode theming, and custom configuration.
+              </p>
+            </div>
+
+            <!-- Skill 4: JavaScript ES6+ -->
+            <div class="skill-card reveal delay-300">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl bg-graphite/80 border border-silverMetallic/25 flex items-center justify-center text-pureWhite">
+                  <span class="font-orbitron font-black text-sm">JS</span>
+                </div>
+                <span class="skill-badge learning">Learning</span>
+              </div>
+              <h3 class="font-orbitron font-bold text-lg text-pureWhite mb-1">JavaScript ES6+</h3>
+              <p class="font-inter text-xs text-silverMuted leading-relaxed">
+                DOM manipulation, event handling, arrow functions, async logic, and interactive components.
+              </p>
+            </div>
+
+            <!-- Skill 5: Git -->
+            <div class="skill-card reveal">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl bg-graphite/80 border border-silverMetallic/25 flex items-center justify-center text-pureWhite">
+                  <span class="font-orbitron font-black text-sm">GIT</span>
+                </div>
+                <span class="skill-badge developing">Developing</span>
+              </div>
+              <h3 class="font-orbitron font-bold text-lg text-pureWhite mb-1">Git</h3>
+              <p class="font-inter text-xs text-silverMuted leading-relaxed">
+                Version control fundamentals, committing history, branch management, and repository hygiene.
+              </p>
+            </div>
+
+            <!-- Skill 6: GitHub -->
+            <div class="skill-card reveal delay-100">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl bg-graphite/80 border border-silverMetallic/25 flex items-center justify-center text-pureWhite">
+                  <span class="font-orbitron font-black text-sm">GH</span>
+                </div>
+                <span class="skill-badge developing">Developing</span>
+              </div>
+              <h3 class="font-orbitron font-bold text-lg text-pureWhite mb-1">GitHub</h3>
+              <p class="font-inter text-xs text-silverMuted leading-relaxed">
+                Remote repositories, collaborative workflows, GitHub Pages deployment, and release tagging.
+              </p>
+            </div>
+
+            <!-- Skill 7: Responsive Web -->
+            <div class="skill-card reveal delay-200">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl bg-graphite/80 border border-silverMetallic/25 flex items-center justify-center text-pureWhite">
+                  <span class="font-orbitron font-black text-sm">RWD</span>
+                </div>
+                <span class="skill-badge developing">Developing</span>
+              </div>
+              <h3 class="font-orbitron font-bold text-lg text-pureWhite mb-1">Responsive Web</h3>
+              <p class="font-inter text-xs text-silverMuted leading-relaxed">
+                Mobile-first paradigm, flexible grid systems, responsive typography, and cross-device testing.
+              </p>
+            </div>
+
+            <!-- Skill 8: Basic UI Design -->
+            <div class="skill-card reveal delay-300">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl bg-graphite/80 border border-silverMetallic/25 flex items-center justify-center text-pureWhite">
+                  <span class="font-orbitron font-black text-sm">UI</span>
+                </div>
+                <span class="skill-badge exploring">Exploring</span>
+              </div>
+              <h3 class="font-orbitron font-bold text-lg text-pureWhite mb-1">Basic UI Design</h3>
+              <p class="font-inter text-xs text-silverMuted leading-relaxed">
+                Visual hierarchy, color harmony, dark mode contrast, wireframing, and component aesthetics.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           7. CERTIFICATES SECTION
+           ======================================================================== -->
+      <section id="certificates" class="py-24 bg-carbonBlack/60 relative border-t border-b border-silverMetallic/10">
+        <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+          
+          <!-- Section Header -->
+          <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+            <span class="font-orbitron text-xs tracking-widest text-silver uppercase block mb-2">PENGAKUAN & DOKUMEN</span>
+            <h2 class="font-orbitron font-extrabold text-3xl sm:text-4xl md:text-5xl text-pureWhite mb-4">
+              <span class="text-metallic">CERTIFICATES</span>
+            </h2>
+            <p class="font-space text-silverMetallic text-base sm:text-lg">
+              Dokumentasi pencapaian dalam bidang studi keislaman, pengabdian, dan pembelajaran mandiri teknologi.
+            </p>
+          </div>
+
+          <!-- Certificates Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Certificate 1: LIPIA Surabaya -->
+            <div class="glass-panel cert-card flex flex-col justify-between overflow-hidden reveal"
+                 data-cert-img="assets/certificates/cert-lipia.svg"
+                 data-cert-title="Pendidikan Bahasa Arab dan Studi Keislaman"
+                 data-cert-issuer="LIPIA Surabaya (Lembaga Ilmu Pengetahuan Islam & Arab)"
+                 data-cert-year="2023 / 1444 H"
+                 data-cert-desc="Sertifikat resmi tanda kelulusan program intensif Bahasa Arab dan Dasar Studi Keislaman di LIPIA Surabaya. Mencakup penguasaan tata bahasa Arab (Nahwu & Sharaf), percakapan, serta pemahaman literatur syar'i.">
+              
+              <div class="relative aspect-[4/3] bg-carbonBlack overflow-hidden border-b border-silverMetallic/15">
+                <img src="assets/certificates/cert-lipia.svg" alt="Sertifikat LIPIA Surabaya" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-deepBlack/80 border border-silverMetallic/30 font-orbitron text-[10px] text-silverBright">
+                  2023
+                </span>
+              </div>
+
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="font-space text-xs font-semibold text-iceBlue block mb-1">LIPIA Surabaya</span>
+                  <h3 class="font-orbitron font-bold text-base sm:text-lg text-pureWhite mb-2">
+                    Pendidikan Bahasa Arab & Studi Keislaman
+                  </h3>
+                  <p class="font-inter text-xs text-silverMuted leading-relaxed mb-4">
+                    Program intensif kebahasaan Arab, pemahaman teks keagamaan, dan pembinaan karakter intelektual.
+                  </p>
+                </div>
+                <button type="button" class="btn-metallic btn-view-cert w-full text-xs">
+                  <span>View Certificate</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Certificate 2: Islamic Development Network -->
+            <div class="glass-panel cert-card flex flex-col justify-between overflow-hidden reveal delay-100"
+                 data-cert-img="assets/certificates/cert-tahfidz.svg"
+                 data-cert-title="Sertifikat Pengabdian Pembina Tahfidz & Asrama"
+                 data-cert-issuer="Islamic Development Network (IDN) & Ma'had Ibn Abbas"
+                 data-cert-year="2023 — 2024"
+                 data-cert-desc="Sertifikat penghargaan atas dedikasi 1 tahun dalam membimbing program tahfidz Al-Qur'an santri, mengelola kedisiplinan dan pembinaan asrama, serta membentuk kepemimpinan santri.">
+              
+              <div class="relative aspect-[4/3] bg-carbonBlack overflow-hidden border-b border-silverMetallic/15">
+                <img src="assets/certificates/cert-tahfidz.svg" alt="Sertifikat IDN Tahfidz" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-deepBlack/80 border border-silverMetallic/30 font-orbitron text-[10px] text-silverBright">
+                  2024
+                </span>
+              </div>
+
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="font-space text-xs font-semibold text-iceBlue block mb-1">Islamic Development Network</span>
+                  <h3 class="font-orbitron font-bold text-base sm:text-lg text-pureWhite mb-2">
+                    Tahfidz & Manajemen Asrama
+                  </h3>
+                  <p class="font-inter text-xs text-silverMuted leading-relaxed mb-4">
+                    Dedikasi satu tahun pembinaan tahfidz Al-Qur'an, kedisiplinan santri, dan tata kelola asrama.
+                  </p>
+                </div>
+                <button type="button" class="btn-metallic btn-view-cert w-full text-xs">
+                  <span>View Certificate</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Certificate 3: Frontend Web Development Initiative -->
+            <div class="glass-panel cert-card flex flex-col justify-between overflow-hidden reveal delay-200"
+                 data-cert-img="assets/certificates/cert-webdev.svg"
+                 data-cert-title="Frontend Web Development & Semantic Architecture"
+                 data-cert-issuer="Modern Web Initiative (Self-Paced Track)"
+                 data-cert-year="2026 — In Progress"
+                 data-cert-desc="Sertifikasi kompetensi mandiri dalam pengembangan web frontend: HTML5 semantik, CSS3 utility, Tailwind CSS framework, JavaScript ES6+ dasar, dan Git/GitHub workflow.">
+              
+              <div class="relative aspect-[4/3] bg-carbonBlack overflow-hidden border-b border-silverMetallic/15">
+                <img src="assets/certificates/cert-webdev.svg" alt="Sertifikat Web Development" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-deepBlack/80 border border-silverMetallic/30 font-orbitron text-[10px] text-silverBright">
+                  2026
+                </span>
+              </div>
+
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="font-space text-xs font-semibold text-iceBlue block mb-1">Modern Web Initiative</span>
+                  <h3 class="font-orbitron font-bold text-base sm:text-lg text-pureWhite mb-2">
+                    Web Development Fundamentals
+                  </h3>
+                  <p class="font-inter text-xs text-silverMuted leading-relaxed mb-4">
+                    Kompetensi terapan HTML5, CSS modern, Tailwind CSS, JavaScript ES6+, dan manajemen Git.
+                  </p>
+                </div>
+                <button type="button" class="btn-metallic btn-view-cert w-full text-xs">
+                  <span>View Certificate</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           8. SELECTED PROJECTS
+           ======================================================================== -->
+      <section id="projects" class="py-24 relative">
+        <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+          
+          <!-- Section Header -->
+          <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+            <span class="font-orbitron text-xs tracking-widest text-silver uppercase block mb-2">KARYA TERPILIH</span>
+            <h2 class="font-orbitron font-extrabold text-3xl sm:text-4xl md:text-5xl text-pureWhite mb-4">
+              SELECTED <span class="text-metallic">PROJECTS</span>
+            </h2>
+            <p class="font-space text-silverMetallic text-base sm:text-lg">
+              Implementasi nyata dan eksperimen digital dalam pengembangan web modern.
+            </p>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project 01: Personal Portfolio -->
+            <article class="project-card reveal">
+              <div class="project-image-wrapper">
+                <span class="project-number-badge">PROJECT 01</span>
+                <img src="assets/projects/project-portfolio.jpg" alt="Personal Portfolio Screenshot" />
+              </div>
+
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="px-2.5 py-1 rounded bg-graphite text-[11px] font-space text-silverBright">HTML5</span>
+                    <span class="px-2.5 py-1 rounded bg-graphite text-[11px] font-space text-silverBright">Tailwind CSS</span>
+                    <span class="px-2.5 py-1 rounded bg-graphite text-[11px] font-space text-silverBright">JavaScript</span>
+                  </div>
+
+                  <h3 class="font-orbitron font-bold text-xl text-pureWhite mb-2">
+                    Personal Portfolio
+                  </h3>
+                  <p class="font-inter text-xs sm:text-sm text-silverMuted leading-relaxed mb-6">
+                    Website portfolio bertema Dark Silver Futuristic Cosmic dengan Canvas starfield, mode interaktif profil, dan arsitektur responsif premium.
+                  </p>
+                </div>
+
+                <div class="flex items-center gap-3 pt-4 border-t border-silverMetallic/15">
+                  <a href="#home" class="btn-metallic flex-1 text-xs py-2">
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-outline flex-1 text-xs py-2 text-center">
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 02: Sistem Absensi Pengajar -->
+            <article class="project-card reveal delay-100">
+              <div class="project-image-wrapper">
+                <span class="project-number-badge">PROJECT 02</span>
+                <img src="assets/projects/project-absensi.jpg" alt="Sistem Absensi Pengajar Screenshot" />
+              </div>
+
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="px-2.5 py-1 rounded bg-graphite text-[11px] font-space text-silverBright">HTML</span>
+                    <span class="px-2.5 py-1 rounded bg-graphite text-[11px] font-space text-silverBright">CSS3</span>
+                    <span class="px-2.5 py-1 rounded bg-graphite text-[11px] font-space text-silverBright">JavaScript</span>
+                  </div>
+
+                  <h3 class="font-orbitron font-bold text-xl text-pureWhite mb-2">
+                    Sistem Absensi Pengajar
+                  </h3>
+                  <p class="font-inter text-xs sm:text-sm text-silverMuted leading-relaxed mb-6">
+                    Dashboard presensi dan pelaporan jadwal guru/ustadz berbasis web untuk meningkatkan akurasi kehadiran di lembaga pendidikan dan tahfidz.
+                  </p>
+                </div>
+
+                <div class="flex items-center gap-3 pt-4 border-t border-silverMetallic/15">
+                  <a href="https://wa.me/6282132068499?text=Halo%20Moh%20Izza,%20saya%20tertarik%20dengan%20demo%20Sistem%20Absensi%20Pengajar" target="_blank" rel="noopener noreferrer" class="btn-metallic flex-1 text-xs py-2">
+                    <span>Inquire Demo</span>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-outline flex-1 text-xs py-2 text-center">
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 03: Web Experiment -->
+            <article class="project-card reveal delay-200">
+              <div class="project-image-wrapper">
+                <span class="project-number-badge">PROJECT 03</span>
+                <img src="assets/projects/project-experiment.jpg" alt="Web Experiment Screenshot" />
+              </div>
+
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="px-2.5 py-1 rounded bg-graphite text-[11px] font-space text-silverBright">HTML5</span>
+                    <span class="px-2.5 py-1 rounded bg-graphite text-[11px] font-space text-silverBright">Tailwind CSS</span>
+                    <span class="px-2.5 py-1 rounded bg-graphite text-[11px] font-space text-silverBright">Canvas JS</span>
+                  </div>
+
+                  <h3 class="font-orbitron font-bold text-xl text-pureWhite mb-2">
+                    Web Experiment
+                  </h3>
+                  <p class="font-inter text-xs sm:text-sm text-silverMuted leading-relaxed mb-6">
+                    Eksperimen antarmuka HUD futuristik, manipulasi partikel canvas, transisi mikro, dan desain interaktif berkecepatan tinggi.
+                  </p>
+                </div>
+
+                <div class="flex items-center gap-3 pt-4 border-t border-silverMetallic/15">
+                  <a href="#home" class="btn-metallic flex-1 text-xs py-2">
+                    <span>Live Preview</span>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-outline flex-1 text-xs py-2 text-center">
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           9. MY JOURNEY (SWALLOWED STAR INSPIRED PROGRESSION SYSTEM)
+           ======================================================================== -->
+      <section id="journey" class="py-24 bg-carbonBlack/60 relative border-t border-b border-silverMetallic/10">
+        <div class="max-w-[1180px] mx-auto px-5 md:px-8">
+          
+          <!-- Section Header -->
+          <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+            <span class="font-orbitron text-xs tracking-widest text-silver uppercase block mb-2">EVOLUSI DIRI</span>
+            <h2 class="font-orbitron font-extrabold text-3xl sm:text-4xl md:text-5xl text-pureWhite mb-4">
+              MY <span class="text-metallic">JOURNEY</span>
+            </h2>
+            <p class="font-space text-silverMetallic text-base sm:text-lg">
+              Perjalanan pertumbuhan berkesinambungan: dari pondasi karakter hingga penguasaan teknologi.
+            </p>
+          </div>
+
+          <!-- Progression Sequence Visualizer Bar -->
+          <div class="hidden md:flex items-center justify-between max-w-4xl mx-auto mb-16 p-4 rounded-2xl glass-panel reveal">
+            <div class="text-center flex-1">
+              <span class="font-orbitron text-[11px] font-bold text-silverBright block">FOUNDATION</span>
+              <span class="text-[10px] text-silverMuted font-inter">Karakter & Adab</span>
+            </div>
+            <span class="text-silverMuted">→</span>
+            <div class="text-center flex-1">
+              <span class="font-orbitron text-[11px] font-bold text-silverBright block">TRAINING</span>
+              <span class="text-[10px] text-silverMuted font-inter">Pengabdian & Asrama</span>
+            </div>
+            <span class="text-silverMuted">→</span>
+            <div class="text-center flex-1">
+              <span class="font-orbitron text-[11px] font-bold text-silverBright block">KNOWLEDGE</span>
+              <span class="text-[10px] text-silverMuted font-inter">Manajemen Pendidikan</span>
+            </div>
+            <span class="text-silverMuted">→</span>
+            <div class="text-center flex-1">
+              <span class="font-orbitron text-[11px] font-bold text-silverBright block">DEVELOPMENT</span>
+              <span class="text-[10px] text-silverMuted font-inter">Web & Digital Tools</span>
+            </div>
+            <span class="text-silverMuted">→</span>
+            <div class="text-center flex-1">
+              <span class="font-orbitron text-[11px] font-bold text-pureWhite block">EVOLUTION</span>
+              <span class="text-[10px] text-iceBlue font-inter">Sinergi Masa Depan</span>
+            </div>
+          </div>
+
+          <!-- Journey Milestones List -->
+          <div class="space-y-8">
+            
+            <!-- Stage 1: Foundation -->
+            <div class="glass-panel p-6 sm:p-8 hud-corner reveal">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                <div>
+                  <span class="progression-step-badge">STAGE 01 • FOUNDATION</span>
+                  <h3 class="font-orbitron font-bold text-xl text-pureWhite">
+                    Ma'had Tahfidz Ibn Abbas As-Salafi
+                  </h3>
+                </div>
+                <span class="font-orbitron text-xs text-iceBlue font-bold px-3 py-1 rounded bg-graphite border border-silverMetallic/20 w-max">
+                  2021 — 2022
+                </span>
+              </div>
+              <p class="font-inter text-silverMuted text-sm sm:text-base leading-relaxed">
+                Pengalaman pengabdian dalam lingkungan pendidikan dan tahfidz Al-Qur'an. Membantu aktivitas santri harian, membangun integritas adab, dan memupuk rasa tanggung jawab dalam membina generasi muda.
+              </p>
+            </div>
+
+            <!-- Stage 2: Training -->
+            <div class="glass-panel p-6 sm:p-8 hud-corner reveal delay-100">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                <div>
+                  <span class="progression-step-badge">STAGE 02 • TRAINING</span>
+                  <h3 class="font-orbitron font-bold text-xl text-pureWhite">
+                    Islamic Development Network (IDN)
+                  </h3>
+                </div>
+                <span class="font-orbitron text-xs text-iceBlue font-bold px-3 py-1 rounded bg-graphite border border-silverMetallic/20 w-max">
+                  1 YEAR (2023 — 2024)
+                </span>
+              </div>
+              <p class="font-inter text-silverMuted text-sm sm:text-base leading-relaxed">
+                Bertanggung jawab di bidang Tahfidz dan pengelolaan kedisiplinan Asrama. Melatih kepekaan manajemen organisasi praktis, penyelesaian konflik antar santri, serta koordinasi program pembinaan karakter.
+              </p>
+            </div>
+
+            <!-- Stage 3: Knowledge -->
+            <div class="glass-panel p-6 sm:p-8 hud-corner reveal delay-200">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                <div>
+                  <span class="progression-step-badge">STAGE 03 • KNOWLEDGE</span>
+                  <h3 class="font-orbitron font-bold text-xl text-pureWhite">
+                    UIN Syekh Wasil Kediri
+                  </h3>
+                </div>
+                <span class="font-orbitron text-xs text-iceBlue font-bold px-3 py-1 rounded bg-graphite border border-silverMetallic/20 w-max">
+                  2024 — PRESENT
+                </span>
+              </div>
+              <p class="font-inter text-silverMuted text-sm sm:text-base leading-relaxed">
+                Menempuh studi Manajemen Pendidikan Islam (MPI) hingga semester 5. Memperdalam teori kepemimpinan kelembagaan, metodologi riset ilmiah, tata kelola mutu sekolah Islam, dan dinamika keorganisasian mahasiswa.
+              </p>
+            </div>
+
+            <!-- Stage 4: Development -->
+            <div class="glass-panel p-6 sm:p-8 hud-corner reveal delay-300">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                <div>
+                  <span class="progression-step-badge">STAGE 04 • DEVELOPMENT</span>
+                  <h3 class="font-orbitron font-bold text-xl text-pureWhite">
+                    Web Development Exploration
+                  </h3>
+                </div>
+                <span class="font-orbitron text-xs text-iceBlue font-bold px-3 py-1 rounded bg-graphite border border-silverMetallic/20 w-max">
+                  PRESENT
+                </span>
+              </div>
+              <p class="font-inter text-silverMuted text-sm sm:text-base leading-relaxed">
+                Mengeksplorasi dan mempraktikkan HTML, CSS, Tailwind CSS, JavaScript ES6+, Git, dan GitHub secara konsisten. Membangun portofolio dan proyek aplikasi edukasi untuk mengasah keterampilan coding mandiri.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           10. PHILOSOPHY SECTION (COSMIC ATMOSPHERE)
+           ======================================================================== -->
+      <section class="py-24 relative overflow-hidden">
+        <div class="max-w-[1100px] mx-auto px-5 md:px-8">
+          <div class="philosophy-card p-10 sm:p-16 text-center reveal">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-graphite/80 border border-silverMetallic/30 mb-8">
+              <span class="w-2 h-2 rounded-full bg-silverBright animate-ping"></span>
+              <span class="font-orbitron text-xs tracking-widest text-silverBright uppercase">CORE PHILOSOPHY</span>
+            </div>
+
+            <!-- Main Large Quote -->
+            <blockquote class="font-orbitron font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-metallic leading-tight tracking-tight uppercase mb-8">
+              "Progress is built step by step."
+            </blockquote>
+
+            <!-- Reflection Sub-Quote -->
+            <p class="font-space text-base sm:text-xl text-silverMetallic max-w-2xl mx-auto leading-relaxed">
+              "Belajar bukan tentang seberapa cepat kita sampai, tetapi seberapa konsisten kita berkembang."
+            </p>
+
+            <div class="mt-8 flex items-center justify-center gap-3">
+              <span class="h-[1px] w-12 bg-silverMetallic/30"></span>
+              <span class="font-orbitron text-xs tracking-widest text-silverMuted">MOH IZZA ROMADLON</span>
+              <span class="h-[1px] w-12 bg-silverMetallic/30"></span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           11. CONTACT SECTION
+           ======================================================================== -->
+      <section id="contact" class="py-24 bg-carbonBlack/60 relative border-t border-silverMetallic/10">
+        <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Left Contact Info -->
+            <div class="lg:col-span-5 reveal">
+              <span class="font-orbitron text-xs tracking-widest text-silver uppercase block mb-2">HUBUNGI SAYA</span>
+              <h2 class="font-orbitron font-extrabold text-3xl sm:text-4xl md:text-5xl text-pureWhite mb-4">
+                LET'S <span class="text-metallic">CONNECT</span>
+              </h2>
+              <p class="font-inter text-silverMuted text-base sm:text-lg leading-relaxed mb-8">
+                Jika ingin berdiskusi, berkolaborasi, atau memiliki project yang ingin dikembangkan bersama, silakan hubungi saya. Terbuka untuk diskusi manajemen pendidikan maupun kolaborasi web development.
+              </p>
+
+              <!-- Direct Action Buttons -->
+              <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                <a href="https://wa.me/6282132068499" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-metallic justify-center">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M20.5 3.5A11.6 11.6 0 0 0 3.8 17.7L2.2 21.8l4.3-1.6a11.7 11.7 0 0 0 13.9-18.7zm-7.1 17.6h-.1a9.7 9.7 0 0 1-4.9-1.3l-.3-.2-2.5.9.8-2.4-.2-.3A9.8 9.8 0 1 1 13.4 21.1zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5c-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.1.1-.3.1-.4 0-.1-.1-.3-.2-.5-.1-.2-.7-1.6-.9-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.3-.3.3-1 1-.1 2.5s1.8 3.1 4 4.2c2.2 1.2 2.7 1.1 3.2.9.5-.2 1.6-.7 1.8-1.3.2-.7.2-1.2.1-1.3-.1-.1-.3-.2-.6-.3z"/>
+                  </svg>
+                  <span>WhatsApp Me</span>
+                </a>
+                <a href="https://github.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-outline justify-center">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+
+              <!-- Quick Info Cards -->
+              <div class="space-y-4 font-inter text-sm">
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-graphite/40 border border-silverMetallic/15">
+                  <div class="w-8 h-8 rounded-lg bg-graphite flex items-center justify-center text-silverBright">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-silverMuted block">Lokasi</span>
+                    <span class="text-pureWhite font-medium">Kediri, Jawa Timur, Indonesia</span>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-graphite/40 border border-silverMetallic/15">
+                  <div class="w-8 h-8 rounded-lg bg-graphite flex items-center justify-center text-silverBright">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-silverMuted block">Direct WhatsApp</span>
+                    <span class="text-pureWhite font-medium">+62 821-3206-8499</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Interactive Message Launcher Form -->
+            <div class="lg:col-span-7 glass-panel p-8 sm:p-10 hud-corner reveal delay-200">
+              <h3 class="font-orbitron font-bold text-xl text-pureWhite mb-2">Kirim Pesan Langsung</h3>
+              <p class="font-inter text-xs text-silverMuted mb-6">
+                Tuliskan pesan Anda di bawah, formulir ini akan secara otomatis membuka obrolan terformat ke WhatsApp Moh Izza.
+              </p>
+
+              <form id="portfolio-contact-form" class="space-y-4">
+                <div>
+                  <label for="contact-name" class="block font-space text-xs font-semibold text-silver mb-1.5">NAMA ANDA</label>
+                  <input type="text" 
+                         id="contact-name" 
+                         required 
+                         placeholder="Contoh: Ahmad Fauzi"
+                         class="w-full px-4 py-3 rounded-xl bg-deepBlack/80 border border-silverMetallic/20 text-pureWhite placeholder-silverMuted/60 text-sm focus:outline-none focus:border-silverBright focus:ring-1 focus:ring-silverBright transition-colors" />
+                </div>
+
+                <div>
+                  <label for="contact-role" class="block font-space text-xs font-semibold text-silver mb-1.5">TOPIK / PERIHAL</label>
+                  <input type="text" 
+                         id="contact-role" 
+                         required 
+                         placeholder="Contoh: Diskusi Website Lembaga / Kolaborasi Edukasi"
+                         class="w-full px-4 py-3 rounded-xl bg-deepBlack/80 border border-silverMetallic/20 text-pureWhite placeholder-silverMuted/60 text-sm focus:outline-none focus:border-silverBright focus:ring-1 focus:ring-silverBright transition-colors" />
+                </div>
+
+                <div>
+                  <label for="contact-message" class="block font-space text-xs font-semibold text-silver mb-1.5">PESAN</label>
+                  <textarea id="contact-message" 
+                            rows="4" 
+                            required 
+                            placeholder="Tuliskan pesan atau detail kebutuhan Anda..."
+                            class="w-full px-4 py-3 rounded-xl bg-deepBlack/80 border border-silverMetallic/20 text-pureWhite placeholder-silverMuted/60 text-sm focus:outline-none focus:border-silverBright focus:ring-1 focus:ring-silverBright transition-colors resize-none"></textarea>
+                </div>
+
+                <button type="submit" class="btn-metallic w-full py-3.5 tracking-wider">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                  <span>KIRIM KE WHATSAPP</span>
+                </button>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========================================================================
+         12. FOOTER
+         ======================================================================== -->
+    <footer class="bg-deepBlack border-t border-silverMetallic/15 py-12 relative z-10">
+      <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 text-center md:text-left">
+          <!-- Identity Info -->
+          <div>
+            <div class="flex items-center justify-center md:justify-start gap-2 mb-1">
+              <div class="w-6 h-6 rounded-full bg-graphite border border-silverMetallic/30 flex items-center justify-center p-1">
+                <img src="assets/images/emblem.svg" alt="Emblem" class="w-full h-full object-contain" />
+              </div>
+              <span class="font-orbitron font-bold text-lg text-pureWhite tracking-wider">MOH IZZA ROMADLON</span>
+            </div>
+            <p class="font-space text-xs text-silverMuted">
+              Management Education Student × Web Development Enthusiast
+            </p>
+          </div>
+
+          <!-- Social Links in Footer -->
+          <div class="flex items-center gap-3">
+            <a href="https://www.instagram.com/za_rama.02?stkn=b2FmMjhubjk4amVm" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-graphite/60 border border-silverMetallic/20 flex items-center justify-center text-silver hover:text-pureWhite hover:border-silverBright transition-all">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5.25-3.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/>
+              </svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-9 h-9 rounded-full bg-graphite/60 border border-silverMetallic/20 flex items-center justify-center text-silver hover:text-pureWhite hover:border-silverBright transition-all">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/6282132068499" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-graphite/60 border border-silverMetallic/20 flex items-center justify-center text-silver hover:text-pureWhite hover:border-silverBright transition-all">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M20.5 3.5A11.6 11.6 0 0 0 3.8 17.7L2.2 21.8l4.3-1.6a11.7 11.7 0 0 0 13.9-18.7zm-7.1 17.6h-.1a9.7 9.7 0 0 1-4.9-1.3l-.3-.2-2.5.9.8-2.4-.2-.3A9.8 9.8 0 1 1 13.4 21.1zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5c-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.1.1-.3.1-.4 0-.1-.1-.3-.2-.5-.1-.2-.7-1.6-.9-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.3-.3.3-1 1-.1 2.5s1.8 3.1 4 4.2c2.2 1.2 2.7 1.1 3.2.9.5-.2 1.6-.7 1.8-1.3.2-.7.2-1.2.1-1.3-.1-.1-.3-.2-.6-.3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Copyright & Built With -->
+        <div class="pt-6 border-t border-silverMetallic/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-inter text-silverMuted">
+          <div>
+            © 2026 Moh Izza Romadlon. All rights reserved.
+          </div>
+          <div class="font-space text-silver">
+            Built with <span class="text-silverBright">HTML</span> • <span class="text-silverBright">Tailwind CSS</span> • <span class="text-silverBright">JavaScript</span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ========================================================================
+       13. CERTIFICATE MODAL PREVIEW (ACCESSIBLE LIGHTBOX)
+       ======================================================================== -->
+  <div id="cert-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-cert-title">
+    <div class="modal-content p-6 sm:p-8">
+      
+      <!-- Close Button -->
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Tutup Pratinjau Sertifikat">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Certificate Image Preview -->
+      <div class="rounded-xl overflow-hidden bg-carbonBlack border border-silverMetallic/20 mb-6 max-h-[500px] flex items-center justify-center">
+        <img id="modal-cert-image" src="" alt="Pratinjau Sertifikat" class="w-full h-auto max-h-[500px] object-contain" />
+      </div>
+
+      <!-- Certificate Modal Details -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <span id="modal-cert-issuer" class="font-space text-xs font-semibold text-iceBlue">
+          Institusi
+        </span>
+        <span id="modal-cert-year" class="font-orbitron text-xs text-silver">
+          Tahun
+        </span>
+      </div>
+
+      <h3 id="modal-cert-title" class="font-orbitron font-bold text-xl sm:text-2xl text-pureWhite mb-3">
+        Judul Sertifikat
+      </h3>
+
+      <p id="modal-cert-desc" class="font-inter text-xs sm:text-sm text-silverMuted leading-relaxed">
+        Deskripsi sertifikat...
+      </p>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       14. FLOATING BACK TO TOP BUTTON
+       ======================================================================== -->
+  <button id="back-to-top" 
+          class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-graphite/90 border border-silverMetallic/30 text-pureWhite flex items-center justify-center shadow-lg hover:border-silverBright hover:scale-110 transition-all opacity-0 pointer-events-none"
+          aria-label="Kembali ke atas halaman">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <!-- Script Logic -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

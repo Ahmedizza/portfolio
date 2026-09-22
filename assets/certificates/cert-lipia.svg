@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a0d" />
+      <stop offset="50%" stop-color="#12161b" />
+      <stop offset="100%" stop-color="#07080a" />
+    </linearGradient>
+    <linearGradient id="silverSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8e96a0" />
+      <stop offset="30%" stop-color="#e5e7eb" />
+      <stop offset="50%" stop-color="#9aa2ad" />
+      <stop offset="75%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#717a85" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a424d" />
+      <stop offset="50%" stop-color="#c7ccd1" />
+      <stop offset="100%" stop-color="#3a424d" />
+    </linearGradient>
+    <pattern id="islamicGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="rgba(199, 204, 209, 0.04)" stroke-width="1" />
+      <circle cx="20" cy="20" r="6" fill="none" stroke="rgba(199, 204, 209, 0.03)" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="560" fill="url(#bgGrad)" rx="16" />
+  <rect width="800" height="560" fill="url(#islamicGrid)" rx="16" />
+
+  <!-- Outer Double Borders -->
+  <rect x="24" y="24" width="752" height="512" fill="none" stroke="url(#borderGrad)" stroke-width="2" rx="10" />
+  <rect x="34" y="34" width="732" height="492" fill="none" stroke="rgba(199, 204, 209, 0.2)" stroke-width="1" stroke-dasharray="8 4" rx="8" />
+
+  <!-- Corner Ornaments -->
+  <g stroke="url(#silverSheen)" stroke-width="1.5" fill="none">
+    <path d="M 44 64 L 64 64 L 64 44" />
+    <circle cx="64" cy="64" r="3" fill="#c7ccd1" />
+    <path d="M 756 64 L 736 64 L 736 44" />
+    <circle cx="736" cy="64" r="3" fill="#c7ccd1" />
+    <path d="M 44 496 L 64 496 L 64 516" />
+    <circle cx="64" cy="496" r="3" fill="#c7ccd1" />
+    <path d="M 756 496 L 736 496 L 736 516" />
+    <circle cx="736" cy="496" r="3" fill="#c7ccd1" />
+  </g>
+
+  <!-- Crest / Official Seal -->
+  <g transform="translate(400, 95)">
+    <circle cx="0" cy="0" r="34" fill="#15191f" stroke="url(#silverSheen)" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="28" fill="none" stroke="rgba(199, 204, 209, 0.3)" stroke-dasharray="4 2" />
+    <!-- Stylized Arabic Calligraphy / Emblem Icon -->
+    <path d="M -12 -8 L 0 -18 L 12 -8 L 8 14 L -8 14 Z" fill="none" stroke="url(#silverSheen)" stroke-width="1.5" />
+    <circle cx="0" cy="-2" r="4" fill="#e5e7eb" />
+  </g>
+
+  <!-- Institution Header -->
+  <text x="400" y="152" font-family="'Orbitron', 'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#a7adb4" text-anchor="middle">MA'HAD LIPIA SURABAYA</text>
+  <text x="400" y="172" font-family="'Inter', sans-serif" font-size="11" fill="#64748b" letter-spacing="1.5" text-anchor="middle">LEMBAGA ILMU PENGETAHUAN ISLAM DAN ARAB</text>
+
+  <!-- Certificate Title -->
+  <text x="400" y="222" font-family="'Orbitron', 'Space Grotesk', sans-serif" font-size="22" font-weight="800" letter-spacing="3" fill="url(#silverSheen)" text-anchor="middle">SERTIFIKAT KELULUSAN</text>
+  <text x="400" y="246" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8" letter-spacing="1" text-anchor="middle">Diberikan secara terhormat kepada:</text>
+
+  <!-- Recipient Name -->
+  <text x="400" y="295" font-family="'Space Grotesk', 'Inter', sans-serif" font-size="28" font-weight="700" fill="#f8fafc" letter-spacing="1.5" text-anchor="middle">MOH IZZA ROMADLON</text>
+  <line x1="260" y1="312" x2="540" y2="312" stroke="url(#silverSheen)" stroke-width="1.2" opacity="0.6" />
+
+  <!-- Program Details -->
+  <text x="400" y="345" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#c7ccd1" text-anchor="middle">Program Pendidikan Bahasa Arab dan Studi Keislaman</text>
+  <text x="400" y="372" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Telah berhasil menyelesaikan rangkaian program intensif kebahasaan Arab,</text>
+  <text x="400" y="392" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">tata bahasa, pemahaman teks keislaman, serta pembentukan karakter ilmiah.</text>
+
+  <!-- Footer Info -->
+  <g transform="translate(140, 465)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">TAHUN KELULUSAN</text>
+    <text x="0" y="18" font-family="'Orbitron', sans-serif" font-size="13" font-weight="700" fill="#e5e7eb">2023 / 1444 H</text>
+  </g>
+
+  <g transform="translate(400, 465)" text-anchor="middle">
+    <circle cx="0" cy="5" r="22" fill="#13171d" stroke="url(#silverSheen)" stroke-width="1" />
+    <text x="0" y="8" font-family="'Orbitron', sans-serif" font-size="9" fill="#c7ccd1" font-weight="700">VERIFIED</text>
+    <text x="0" y="34" font-family="'Inter', sans-serif" font-size="9" fill="#64748b">REG: LIPIA-SBY-2023</text>
+  </g>
+
+  <g transform="translate(660, 465)" text-anchor="end">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">LOKASI PENYELENGGARAAN</text>
+    <text x="0" y="18" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#e5e7eb">Surabaya, Jawa Timur</text>
+  </g>
+</svg>

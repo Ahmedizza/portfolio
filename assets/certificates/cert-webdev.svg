@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050608" />
+      <stop offset="50%" stop-color="#10141a" />
+      <stop offset="100%" stop-color="#090b0e" />
+    </linearGradient>
+    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#cbd5e1" />
+      <stop offset="25%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#94a3b8" />
+      <stop offset="80%" stop-color="#f1f5f9" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+    <linearGradient id="cyberLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="50%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="560" fill="url(#bgGrad3)" rx="16" />
+
+  <!-- Cyber Tech Circuit Lines in Background -->
+  <path d="M 40 100 L 120 100 L 160 140 L 300 140" fill="none" stroke="rgba(148, 163, 184, 0.07)" stroke-width="1.5" />
+  <circle cx="300" cy="140" r="3" fill="#64748b" opacity="0.3" />
+  <path d="M 760 460 L 680 460 L 640 420 L 500 420" fill="none" stroke="rgba(148, 163, 184, 0.07)" stroke-width="1.5" />
+  <circle cx="500" cy="420" r="3" fill="#64748b" opacity="0.3" />
+
+  <!-- Borders -->
+  <rect x="24" y="24" width="752" height="512" fill="none" stroke="url(#cyberLine)" stroke-width="2" rx="10" />
+  <rect x="36" y="36" width="728" height="488" fill="none" stroke="rgba(203, 213, 225, 0.15)" stroke-width="1" stroke-dasharray="8 4" rx="8" />
+
+  <!-- Corner Tech HUD Accents -->
+  <g stroke="url(#chromeGrad)" stroke-width="1.5" fill="none">
+    <path d="M 40 55 L 40 40 L 55 40" />
+    <path d="M 760 55 L 760 40 L 745 40" />
+    <path d="M 40 505 L 40 520 L 55 520" />
+    <path d="M 760 505 L 760 520 L 745 520" />
+  </g>
+
+  <!-- Institution Header -->
+  <g transform="translate(400, 95)">
+    <circle cx="0" cy="0" r="34" fill="#11161d" stroke="url(#chromeGrad)" stroke-width="1.5" />
+    <!-- Code Brackets Icon -->
+    <path d="M -10 -8 L -18 0 L -10 8" fill="none" stroke="url(#chromeGrad)" stroke-width="2" stroke-linecap="round" />
+    <path d="M 10 -8 L 18 0 L 10 8" fill="none" stroke="url(#chromeGrad)" stroke-width="2" stroke-linecap="round" />
+    <path d="M 4 -12 L -4 12" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <text x="400" y="152" font-family="'Orbitron', sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#a7adb4" text-anchor="middle">MODERN WEB INITIATIVE</text>
+  <text x="400" y="172" font-family="'Inter', sans-serif" font-size="11" fill="#64748b" letter-spacing="1.5" text-anchor="middle">FRONTEND ENGINEERING &amp; DIGITAL FOUNDATIONS</text>
+
+  <!-- Title -->
+  <text x="400" y="222" font-family="'Orbitron', sans-serif" font-size="22" font-weight="800" letter-spacing="3" fill="url(#chromeGrad)" text-anchor="middle">CERTIFICATE OF PROFICIENCY</text>
+  <text x="400" y="246" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8" letter-spacing="1" text-anchor="middle">This certificate is proudly awarded to:</text>
+
+  <!-- Recipient -->
+  <text x="400" y="295" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700" fill="#f8fafc" letter-spacing="1.5" text-anchor="middle">MOH IZZA ROMADLON</text>
+  <line x1="260" y1="312" x2="540" y2="312" stroke="url(#chromeGrad)" stroke-width="1.2" opacity="0.6" />
+
+  <!-- Details -->
+  <text x="400" y="345" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#c7ccd1" text-anchor="middle">Frontend Web Development &amp; Modern Semantic Architecture</text>
+  <text x="400" y="372" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Demonstrating practical competency in HTML5 Semantic Structure, CSS3 Design Systems,</text>
+  <text x="400" y="392" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Tailwind CSS utility architecture, JavaScript ES6+ logic, Git version control, and GitHub workflows.</text>
+
+  <!-- Footer Info -->
+  <g transform="translate(140, 465)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">SKILL CURRICULUM</text>
+    <text x="0" y="18" font-family="'Orbitron', sans-serif" font-size="13" font-weight="700" fill="#e5e7eb">HTML5 • CSS • JS • GIT</text>
+  </g>
+
+  <g transform="translate(400, 465)" text-anchor="middle">
+    <circle cx="0" cy="5" r="22" fill="#13171d" stroke="url(#chromeGrad)" stroke-width="1" />
+    <text x="0" y="8" font-family="'Orbitron', sans-serif" font-size="9" fill="#c7ccd1" font-weight="700">ACTIVE</text>
+    <text x="0" y="34" font-family="'Inter', sans-serif" font-size="9" fill="#64748b">DEV-FE-2026-PROGRESS</text>
+  </g>
+
+  <g transform="translate(660, 465)" text-anchor="end">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">STATUS</text>
+    <text x="0" y="18" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#e5e7eb">Continuous Learning</text>
+  </g>
+</svg>
